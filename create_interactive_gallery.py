@@ -755,7 +755,7 @@ def create_interactive_gallery():
             f"Generated on {generated_on} | {len(datasets)} Datasets Available | "
             f"{len(embedded_pngs)} Total PNG Plots"
         ),
-        title_emoji="🖼️"
+        title_emoji="🧬"
     )
 
     svg_output = Path('enrichment_plots_gallery_interactive.html')
