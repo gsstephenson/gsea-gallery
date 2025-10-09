@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GSEA Enrichment Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>GSEA Enrichment Gallery</h1>
+    <p id="status">Preparing viewer…</p>
+    <div class="controls">
+      <button id="retry" type="button" hidden>Retry loading</button>
+      <a id="download-link" href="#" download>Download full gallery</a>
+    </div>
+  </header>
+  <main>
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="spinner"></div>
+      <span class="progress" id="progress">0%</span>
+    </div>
+    <iframe id="viewer" title="GSEA gallery" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-downloads" loading="lazy"></iframe>
+  </main>
+  <footer>
+    <p>Tip: Share this page&#8217;s URL. It streams the full gallery directly from GitHub Release assets.</p>
+  </footer>
+</body>
+</html>

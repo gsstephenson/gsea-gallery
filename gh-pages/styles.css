@@ -1,0 +1,138 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background-color: Canvas;
+  color: CanvasText;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  padding: 1rem clamp(1rem, 4vw, 2.5rem);
+  background: color-mix(in srgb, Canvas 80%, AccentColor 20%);
+  color: color-mix(in srgb, CanvasText 85%, #fff 15%);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.1);
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header > h1 {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.5vw + 0.2rem, 1.8rem);
+}
+
+header > p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-variation-settings: "wght" 480;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#retry {
+  border: 1px solid color-mix(in srgb, AccentColor 60%, Canvas 40%);
+  background: color-mix(in srgb, AccentColor 10%, Canvas 90%);
+  color: inherit;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+#retry:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, AccentColor 25%, Canvas 75%);
+}
+
+#download-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+  padding-bottom: 0.1rem;
+}
+
+#download-link:hover {
+  border-bottom-style: solid;
+}
+
+main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+#viewer {
+  width: min(1100px, 100%);
+  height: min(80vh, 70rem);
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 16px 48px rgb(0 0 0 / 0.2);
+  background: #101010;
+}
+
+.loader {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.loader[aria-hidden="true"] {
+  display: none;
+}
+
+.spinner {
+  width: clamp(48px, 8vw, 72px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 6px solid color-mix(in srgb, AccentColor 20%, Canvas 80%);
+  border-top-color: AccentColor;
+  animation: spin 900ms infinite linear;
+}
+
+.progress {
+  font-family: "JetBrains Mono", "SFMono-Regular", ui-monospace, monospace;
+  font-size: 0.95rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+footer {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #viewer {
+    height: min(70vh, 50rem);
+    border-radius: 0.75rem;
+  }
+}
