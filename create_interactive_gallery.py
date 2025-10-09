@@ -763,6 +763,13 @@ def create_interactive_gallery():
     png_output = Path('enrichment_plots_gallery_interactive_png.html')
     png_output.write_text(png_html, encoding='utf-8')
 
+    docs_dir = Path('docs')
+    docs_dir.mkdir(exist_ok=True)
+    docs_index = docs_dir / 'index.html'
+    docs_png = docs_dir / 'enrichment_plots_gallery_interactive_png.html'
+    docs_index.write_text(png_html, encoding='utf-8')
+    docs_png.write_text(png_html, encoding='utf-8')
+
     def report(path: Path, label: str) -> None:
         size_mb = path.stat().st_size / (1024 * 1024)
         print(f"\n✅ {label} created: {path}")
