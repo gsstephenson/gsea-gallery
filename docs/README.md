@@ -29,8 +29,8 @@ This folder contains a lightweight viewer that streams the large enrichment gall
      }
      ```
 4. **Deploy to GitHub Pages**
-   - Place the contents of `gh-pages/` in the branch that backs GitHub Pages (e.g., `gh-pages` or `main`), excluding the 350&nbsp;MB source HTML.
-   - Enable Pages in **Settings → Pages**, selecting the appropriate branch/root folder.
+   - Place the contents of `docs/` in the branch that backs GitHub Pages (e.g., `main` with `/docs`), excluding the 350&nbsp;MB source HTML.
+   - Enable Pages in **Settings → Pages**, selecting the branch and `/docs` folder.
 5. **Share the Pages URL**
    - During the presentation, users load the Pages site. The viewer streams the compressed gallery, decompresses it client-side, and renders it in an iframe. A direct download link is also provided for offline access.
 
