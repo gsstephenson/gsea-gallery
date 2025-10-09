@@ -17,17 +17,10 @@ This folder contains a lightweight viewer that streams the large enrichment gall
    ```bash
    gzip -kc index.html > enrichment-gallery.html.gz
    ```
-2. **Publish a GitHub Release**
-   - Tag the release (e.g., `v2025-demo`).
-   - Upload `enrichment-gallery.html.gz` as a release asset.
+2. **Stage the compressed asset**
+   - Copy `enrichment-gallery.html.gz` into `docs/assets/` (already set up for you).
 3. **Configure the viewer**
-   - Update `config.json` so `releaseUrl` points at the release asset you just uploaded, for example:
-     ```json
-     {
-       "releaseUrl": "https://github.com/gsstephenson/gsea-gallery/releases/download/v2025-demo/enrichment-gallery.html.gz",
-       "assetFriendlyName": "GSEA Enrichment Gallery"
-     }
-     ```
+   - `config.json` points at `assets/enrichment-gallery.html.gz` so the file is served from the same origin, avoiding CORS issues.
 4. **Deploy to GitHub Pages**
    - Place the contents of `docs/` in the branch that backs GitHub Pages (e.g., `main` with `/docs`), excluding the 350&nbsp;MB source HTML.
    - Enable Pages in **Settings → Pages**, selecting the branch and `/docs` folder.
