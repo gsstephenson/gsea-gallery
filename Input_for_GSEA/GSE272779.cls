@@ -1,0 +1,3 @@
+6 2 1
+# GFP GFP_Dox
+GFP GFP GFP GFP_Dox GFP_Dox GFP_Dox

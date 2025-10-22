@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+.venv/
+
+# Raw GSEA outputs generated locally; keep them out of git history.
+GSE*/
+GSEA_outputs/
+GSEA_outputs.zip
+
+# Massive offline gallery exports that exceed GitHub's 100 MB limit.
+/enrichment_plots_gallery_gsstephenson.html
+/enrichment_plots_gallery_interactive.html
+/enrichment_plots_gallery_interactive.7z
+/index.html
+
+# Generic archives created during experimentation.
+*.zip
+*.7z
+
+# Local caches or large downloads.
+server_downloads/
